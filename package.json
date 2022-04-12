@@ -1,0 +1,47 @@
+{
+  "name": "tailmin-vue",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite --host 0.0.0.0"
+  },
+  "dependencies": {
+    "@fawmi/vue-google-maps": "^0.9.4",
+    "@ocrv/vue-tailwind-pagination": "0.0.4",
+    "apexcharts": "^3.28.3",
+    "axios": "^0.21.4",
+    "dayjs": "^1.10.7",
+    "dotenv": "^10.0.0",
+    "gitart-vue-dialog": "^1.0.3",
+    "jw-vue-pagination": "^1.0.3",
+    "litepie-datepicker": "^1.0.14",
+    "moment": "^2.29.1",
+    "particles.vue": "^2.19.0",
+    "particles.vue3": "^1.19.0",
+    "sass": "^1.43.2",
+    "vee-validate": "^4.5.2",
+    "vue": "^3.2.19",
+    "vue-router": "^4.0.12",
+    "vue-tailwind": "^2.4.2",
+    "vue3-apexcharts": "^1.4.1",
+    "vuelidate": "^0.7.6",
+    "vuex": "^4.0.2",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "@headlessui/vue": "^1.4.0",
+    "@tailwindcss/forms": "^0.3.4",
+    "@vitejs/plugin-vue": "^1.9.3",
+    "@vue/compiler-sfc": "^3.2.20",
+    "autoprefixer": "^10.3.7",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.1",
+    "eslint-plugin-vue": "^7.19.1",
+    "postcss": "^8.3.9",
+    "prettier": "2.3.2",
+    "tailwindcss": "^2.2.17",
+    "vite": "^2.6.3"
+  }
+}
