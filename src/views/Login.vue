@@ -3,14 +3,14 @@
     <div class="max-w-md w-full">
     
 
-        <!-- <img class="mx-auto  my-auto m-4 p-4" :src="'/static/logo_fama.png'" width="150"/> --> 
       <Form class="bg-white  border rounded px-10 pt-10 pb-8 mb-4" @submit="handleLogin" :validation-schema="schema">
         <!-- <h2 class="text-center text-xl font-light text-gray-800 mb-4">Cyber Fusion Center</h2> -->   
         <!-- <h2 class="text-center text-sm font-bold text-gray-800 mt-4 mb-1">
           Login to your account
         </h2> -->
 
-         <h1 class="text-center text-xl font-bold text-gray-600 tracking-widest px-2 pb-7">XTEAM</h1>  
+        <img class="mx-auto  my-auto mb-3 px-4" :src="'/static/logo.png'" width="80"/> 
+         <h2 class="text-center text-xl font-bold text-gray-600 tracking-widest px-2 pb-8">AKADEMI SEPAKBOLA</h2>  
            <div v-if="message" role="alert" class="mb-3">
         <div class="bg-red-100 text-red-500 rounded-t px-4 py-2">
           Gagal password atau email tidak sesuai !
@@ -58,7 +58,7 @@
               focus:border-green-500
               focus:z-10
             "
-            placeholder="Email address"
+            placeholder="Email"
             required=""
           />
         </div>
@@ -121,6 +121,7 @@
               justify-center
               py-3
               px-6
+              mb-2
               border border-transparent
               font-medium
               rounded-md
@@ -164,6 +165,10 @@ export default {
       loading: false,
       message: "",
       schema,
+      user: {
+        email: 'admin@admin.com',
+        password: 'xyber!@#'
+      }
     };
   },
   computed: {
@@ -179,7 +184,8 @@ export default {
   methods: {
     handleLogin(user) {
       this.loading = true;
-      this.$store.dispatch("auth/login", user).then(
+      console.log(this.schema);
+      this.$store.dispatch("auth/login", this.user).then(
         () => {
         this.$router.go('/');
          console.log('sukses');

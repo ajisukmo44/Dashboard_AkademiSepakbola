@@ -11,28 +11,30 @@
     </div>
   </div>
   <div class="grid grid-cols-1 gap-4 px-4 mt-8 sm:grid-cols-4 sm:px-8">
-    <div class="flex items-center bg-white border  overflow-hidden shadow  dark:bg-black dark:text-gray-200 dark:border-transparent">
-      <div class="p-4 bg-green-400">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-12 w-12 text-white"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
-          />
-        </svg>
+    <router-link to="/tim">
+      <div class="flex items-center bg-white border  overflow-hidden shadow  dark:bg-black dark:text-gray-200 dark:border-transparent">
+        <div class="p-4 bg-green-400">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-12 w-12 text-white"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+            />
+          </svg>
+        </div>
+        <div class="px-4 text-gray-700">
+          <p class="text-3xl">{{total_tim}}</p>
+          <h3 class="text-secondary">Total Tim Aktif</h3>
+        </div>
       </div>
-      <div class="px-4 text-gray-700">
-        <p class="text-3xl">{{total_tim}}</p>
-        <h3 class="text-secondary">Total Tim Aktif</h3>
-      </div>
-    </div>
+    </router-link>
 
     <div class="flex items-center bg-white border overflow-hidden shadow">
       <div class="p-4 bg-blue-400">
@@ -76,7 +78,7 @@
         </svg>
       </div>
       <div class="px-4 text-gray-700">
-        <p class="text-3xl">14</p>
+        <p class="text-3xl">{{total_blog}}</p>
         <h3 class="text-sm tracking-wider">Blog</h3>
       </div>
     </div>
@@ -99,7 +101,7 @@
         </svg>
       </div>
       <div class="px-4 text-gray-700">
-        <p class="text-3xl">14</p>
+        <p class="text-3xl">{{total_pesan}}</p>
         <h3 class="text-sm tracking-wider">Pesan Masuk</h3>
       </div>
     </div>
@@ -169,10 +171,10 @@
               <th scope="col" class="py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider" width="15%">
                 Kategori
               </th>
-
+<!-- 
               <th scope="col" class="py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider" width="20%">
                 Kab/Kota
-              </th>
+              </th> -->
 
               <th scope="col" class="py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider" width="15%">
                 Tgl Bergabung
@@ -191,7 +193,7 @@
                   <span v-if="tim.kategori_tim.team_kategori == 'Diklat'" class="text-blue-500">{{ tim.kategori_tim.team_kategori }}</span>
                   <span v-if="tim.kategori_tim.team_kategori == 'Akademi'" class="text-yellow-500">{{ tim.kategori_tim.team_kategori }}</span>  
               </td>
-              <td class="py-4 whitespace-nowrap text-sm text-gray-500">{{ tim.city_tim.title_city }}</td>
+              <!-- <td class="py-4 whitespace-nowrap text-sm text-gray-500">{{ tim.city_tim.title_city }}</td> -->
               <td class="py-4 whitespace-nowrap text-sm text-gray-500">{{ tim.created_at}}</td>
               <td class="py-4 whitespace-nowrap text-right text-sm text-blue-600"><a href="#" class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-2 rounded">Detail</a></td>
             </tr>
@@ -299,6 +301,8 @@ export default {
       total_daily:"",
       top_wilayah:"",
       label:"",
+      total_pesan:"",
+      total_blog:""
     }
   },
   methods:{
@@ -365,6 +369,25 @@ export default {
                 console.log(err);
             });
         },
+        getTotalBlogs(){
+            StatistikService.getTotalBlog()
+            .then(response => {
+                this.total_blog = response.data.data;
+            })
+            .catch(err => {
+                console.log(err);
+            });
+        },
+         getTotalPesans(){
+            StatistikService.getTotalPesan()
+            .then(response => {
+                this.total_pesan = response.data.data;
+            })
+            .catch(err => {
+                console.log(err);
+            });
+        },
+       
        
   },
   beforeMount(){
@@ -372,6 +395,8 @@ export default {
   },
   mounted(){
     this.getTotal();
+    this.getTotalPesans();
+    this.getTotalBlogs();
     this.getKategori();
     this.getAcc();
     this.getTimBaru();

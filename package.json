@@ -7,12 +7,15 @@
     "serve": "vite --host 0.0.0.0"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^30.0.0",
+    "@ckeditor/ckeditor5-vue": "^2.0.1",
     "@fawmi/vue-google-maps": "^0.9.4",
     "@ocrv/vue-tailwind-pagination": "0.0.4",
     "apexcharts": "^3.28.3",
     "axios": "^0.21.4",
     "dayjs": "^1.10.7",
     "dotenv": "^10.0.0",
+    "flowbite": "^1.4.7",
     "gitart-vue-dialog": "^1.0.3",
     "jw-vue-pagination": "^1.0.3",
     "litepie-datepicker": "^1.0.14",
@@ -23,6 +26,7 @@
     "vee-validate": "^4.5.2",
     "vue": "^3.2.19",
     "vue-router": "^4.0.12",
+    "vue-sweetalert2": "^5.0.2",
     "vue-tailwind": "^2.4.2",
     "vue3-apexcharts": "^1.4.1",
     "vuelidate": "^0.7.6",

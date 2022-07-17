@@ -15,7 +15,7 @@
       <MenuButton class="flex items-center space-x-2 px-2 py-3 text-sm hover:bg-gray-200 focus:outline-none">
         <img
           class="h-8 w-8 rounded-full"
-          src="" 
+          src="https://cdn1.iconfinder.com/data/icons/avatar-3/512/Manager-512.png" 
           alt=""
         />
         <span>{{name}}</span>
@@ -62,7 +62,7 @@
             </router-link>
           </div>
           <MenuItem v-slot="{ active }">
-            <a @click="logOut" class="cursor-pointer" :class="[active ? 'bg-gray-200' : '', 'block px-4 py-2 text-sm text-gray-700']">Sign out</a
+            <a @click="logOut" class="cursor-pointer" :class="[active ? 'bg-gray-200' : '', 'block px-4 py-2 text-sm text-gray-700']">Log out</a
             >
           </MenuItem>
         </MenuItems>

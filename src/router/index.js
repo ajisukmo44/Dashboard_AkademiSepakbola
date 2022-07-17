@@ -16,24 +16,54 @@ const routes = [
         component: () => import('@/views/dashboard/user/user.vue'),
       },
       {
-        path: 'user-admin',
-        name: 'user-admin',
-        component: () => import('@/views/dashboard/user/user-admin.vue'),
+        path: 'user-tim',
+        name: 'user-tim',
+        component: () => import('@/views/dashboard/user/user-tim.vue'),
       },
       {
-        path: 'teams',
-        name: 'team-list',
-        component: () => import('@/views/dashboard/teams/tim.vue'),
+        path: 'tim',
+        name: 'tim',
+        component: () => import('@/views/dashboard/tim/tim.vue'),
       },
       {
-        path: 'tim-detail/:id',
+        path: 'tim/tim-baru',
+        name: 'tim-baru',
+        component: () => import('@/views/dashboard/tim/tim-baru.vue'),
+      },
+      {
+        path: 'tim/detail/:id',
         name: 'tim-detail',
-        component: () => import('@/views/dashboard/teams/tim-detail.vue'),
+        component: () => import('@/views/dashboard/tim/tim-detail.vue'),
       },
       {
-        path: 'tim-galeri/:id',
+        path: 'tim/tambah-tim',
+        name: 'tambah-tim',
+        component: () => import('@/views/dashboard/tim/tambah-tim.vue'),
+      },
+      {
+        path: 'berita/tambah-berita',
+        name: 'tambah-berita',
+        component: () => import('@/views/dashboard/berita/tambah-berita.vue'),
+      },
+      {
+        path: 'berita/edit-berita/:id',
+        name: 'edit-berita',
+        component: () => import('@/views/dashboard/berita/edit-berita.vue'),
+      },
+      {
+        path: 'tim/detail/tambah-foto/:id',
+        name: 'tambah-foto',
+        component: () => import('@/views/dashboard/tim/tambah-foto.vue'),
+      },
+      {
+        path: 'tim/detail/tim-galeri/:id',
         name: 'tim-galeri',
-        component: () => import('@/views/dashboard/teams/tim-galeri.vue'),
+        component: () => import('@/views/dashboard/tim/tim-galeri.vue'),
+      },
+      {
+        path: 'tim/detail/tim-logo/:id',
+        name: 'tim-logo',
+        component: () => import('@/views/dashboard/tim/tim-logo.vue'),
       },
       {
         path: 'berita',
@@ -43,12 +73,7 @@ const routes = [
       {
         path: 'pesan',
         name: 'pesan',
-        component: () => import('@/views/dashboard/pesan/index.vue'),
-      },
-      {
-        path: 'grafik',
-        name: 'grafik',
-        component: () => import('@/views/dashboard/grafik/grafik.vue'),
+        component: () => import('@/views/dashboard/pesan/pesan.vue'),
       },
       {
         path: 'kategori-tim',
